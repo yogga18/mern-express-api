@@ -1,6 +1,9 @@
 const express = require('express');
 const app = express();
 const cors = require('cors');
+const PORT = process.env.PORT || 4000;
+// Import Controller
+const productRoutes = require('./src/routes/products');
 
 // Allow Cors-Origin
 app.use(
@@ -12,11 +15,9 @@ app.use(
   })
 );
 
-app.use(() => {
-  console.log('Express runing on port 4000');
-});
+// Use Controller
+app.use('/', productRoutes);
 
-const PORT = process.env.PORT || 4000;
 app.listen(PORT, () => {
   console.log(`http://localhost:${PORT}/`);
 });
