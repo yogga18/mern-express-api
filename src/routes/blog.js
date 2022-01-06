@@ -19,4 +19,7 @@ router.post(
   blogController.creatBlog
 );
 
+// [GET All]
+router.get('/posts', blogController.getAllBlogPost);
+
 module.exports = router;
