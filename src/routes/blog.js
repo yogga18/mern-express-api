@@ -39,4 +39,7 @@ router.put(
   blogController.updateBlogPost
 );
 
+// [DELETE]
+router.delete('/post/:postId', blogController.destroyBlogPost);
+
 module.exports = router;
